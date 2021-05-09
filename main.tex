@@ -1,111 +1,104 @@
-\documentclass[11pt]{article}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Algunos Paquetes Necesarios 
-\usepackage{fancyhdr, graphicx, wrapfig,lipsum}
-\usepackage[utf8]{inputenc} % Tildes
-\usepackage[spanish]{babel} % Language
-\usepackage{babelbib} % Bibliografia español
-\usepackage[margin=1in]{geometry} % Margins														
+\documentclass[osajnl,twocolumn,showpacs,superscriptaddress,10pt]{revtex4-2}
+%
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%
+%Paquete de Idioma
+\usepackage[spanish]{babel}
+%
+%Codificación Alfabeto
+\usepackage[utf8]{inputenc}
+%
+%Codificación de Fuente
+\usepackage[T1]{fontenc}
+%
+%Índice
+\usepackage{makeidx}
+%
+%Gráficos
+\usepackage{graphicx}
+\usepackage{subfig}
+%
+%Matemática
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsmath, amsthm, amsfonts}
-\usepackage[table]{xcolor} % Color table
-\usepackage{longtable} % Table accross multiple pages
-\usepackage{hyperref}  % Use Hyperlinks
-\usepackage{enumerate} % Reduce space in enumerate
-\usepackage{txfonts}
-\setlength{\parindent}{0in}
-\decimalpoint
 
-\usepackage{cancel}
+
+
+
+%\usepackage{amstext} 
+%
+%Estilo de Página Numeración superior
+%\pagestyle{headings}
+%
+%Hiperlinks \href{url}{text}
+\usepackage[pdftex]{hyperref}
+%
+%Graficos y tablas
+\usepackage{multirow}
+%\usepackage{multicol}
 \usepackage{float}
+\usepackage{booktabs}
+\usepackage{cancel}
+%\usepackage{tikz-feynman}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\usepackage{siunitx}
+%\tikzfeynmanset{compat=1.0.0}
+%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\myName}{}
-\newcommand{\myDate}{}
-\newcommand{\myCourse}{}
-
-
-%\newcommand{\R}{\mathbb{R}}
-%\newcommand{\F}{\mathbf{F}}
-%\newcommand{\vi}{\mathbf{\hat{i}}}
-%\newcommand{\vj}{\mathbf{\hat{j}}}
-%\newcommand{\vk}{\mathbf{\hat{k}}}
-%\newcommand{\op}{\sigma\sqrt{2\pi}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tema - BEGIN
-\newtheoremstyle{Tema}% name of the style to be used
-  {5mm}% measure of space to leave above the theorem. E.g.: 3pt
-  {10mm}% measure of space to leave below the theorem. E.g.: 3pt
-  {}% name of font to use in the body of the theorem
-  {}% measure of space to indent
-  {\bfseries}% name of head font
-  {\newline}% punctuation between head and body
-  {30mm}% space after theorem head
-  {}% Manually specify head
-
-\theoremstyle{Tema} \newtheorem{Tema}{Tema} %%%%% Template para Temas
-\theoremstyle{Tema} \newtheorem{Serie}{Serie}              %%%%%  Template para Series de ejercicios
-\theoremstyle{Tema} \newtheorem{Ejercicio}{Ejercicio}    %%%%%  Template para Ejercicios
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tema - END
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado - BEGIN %%%%%%%%%%
-\fancypagestyle{firststyle}
-{
-\renewcommand{\headrulewidth}{1.5pt}
-\fancyhead[R]{
-			\textbf{Universidad de San Carlos de Guatemala} \\
-			\textbf{Escuela de Ciencias Físicas y Matemáticas}\\
-			\textbf{\myCourse }  \\  %%%%%%%%%% Agregar nombre del curso 
-			\textbf{\myDate}   %%%%%%%%%%%%%%%%%%%%%% Agregar fecha en formato: Enero 15, 2015
-			}
-\fancyhead[L]{ 
-	\includegraphics[height=1.6 cm]{/home/jorgealejandro/Templates/ECFM.png} \\
-	\textbf{Jorge Alejandro Rodriguez Aldana}\\
-	\textbf{201804766} 
-	}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado - END %%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado (pagina 2 en adelante) - BEGIN %%%
-\fancypagestyle{allStyle}
-{
-\renewcommand{\headrulewidth}{1pt}
-\fancyhead[R]{
-			\emph{\myName $-$ \myCourse} %%%% Modificar número de examen parcial y nombre del curso
-			}
-\fancyhead[L]{}  
-\fancyfoot[C]{}
-\fancyfoot[R]{\thepage}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado (pagina 2 en adelante) - END %%%
-
-\date{}
-\setlength{\headheight}{0.8in} % fixes \headheight warning
-
-%%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%
+%
+%
 \begin{document}
-
-\pagestyle{allStyle}
-
-\thispagestyle{firststyle}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titulo - BEGIN
-\begin{center}
-\LARGE
-\textsc{\myName} % Modificar el Número del examen parcial
-\medskip
-\hrule height 1.5pt
-\end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Instrucciones - BEGIN
-\vspace{0.1 in}
-
-\input{ResumeIntro.tex}
-\input{Content.tex}
-
-\end{document} %%%%%%%%%%%%%%%%%%%%%%%% BEGIN%%%%%%%%%%%%%%
+	%Titulo
+	\title{La paradoja EPR y la desigualdad de Bell}
+	
+	\author{Rubí Esmeralda, Ramírez Milián, 201804565$^1$ y Jorge Alejandro, Rodríguez Aldana, 201804766}
+	\affiliation{ECFM, Departamento de Física, Universidad de San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+	}
+	
+	
+	%\collaboration{MUSO Collaboration}%\noaffiliation
+	
+	%\date{\today}%
+	
+	%Resumen
+	\begin{abstract}
+		
+		
+	\end{abstract}
+	
+	\maketitle{}
+	
+	\section{Introducci\'on }
+	
+	
+	
+\input{metrica_minkowski.tex}
+	
+	\input{Content.tex}
+	
+	%\input{EPR-Bell.tex}
+	
+	
+	
+	
+	
+	
+	
+	
+	\section{Conclusi\'on}
+	
+	
+	
+	\nocite*
+	\bibliographystyle{IEEEtran}
+	\bibliography{IEEEabrv,referencias}
+	
+\end{document}
